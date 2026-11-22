@@ -3,6 +3,7 @@ import json
 import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
+OUTPUT = ROOT / "_site"
 
 # These paths are relative to the repository root.
 SOURCES = {
