@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - "UWTS-Build/Compiled Mod/gfx/interface/goals/**"
-      - "UWTS-Build/Compiled Mod/gfx/interface/ideas/**"
+      - "Compiled Mod/gfx/interface/goals/**"
+      - "Compiled Mod/gfx/interface/ideas/**"
       - "gfx-search/**"
       - ".github/workflows/gfx-search.yml"
   workflow_dispatch:
