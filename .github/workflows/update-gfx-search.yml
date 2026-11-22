@@ -1,0 +1,21 @@
+name: Notify GFX Search
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "Compiled Mod/gfx/interface/goals/**"
+      - "Compiled Mod/gfx/interface/ideas/**"
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger GFX Search rebuild
+        env:
+          GH_TOKEN: ${{ secrets.CROSS_REPO_TOKEN }}
+        run: |
+          gh api repos/Up-With-The-Stars/uwts_art/dispatches \
+            -f event_type=update-gfx-search
