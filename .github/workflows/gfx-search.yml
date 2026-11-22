@@ -1,0 +1,47 @@
+name: Build and deploy GFX Search
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "UWTS-Build/Compiled Mod/gfx/interface/goals/**"
+      - "UWTS-Build/Compiled Mod/gfx/interface/ideas/**"
+      - "gfx-search/**"
+      - ".github/workflows/gfx-search.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Generate website and copy graphics
+        run: python gfx-search/generator.py
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "_site"
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
