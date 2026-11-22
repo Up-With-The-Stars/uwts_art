@@ -9,6 +9,7 @@ OUTPUT = ROOT / "_site"
 SOURCES = {
     "goals": ROOT / "UWTS-Build" / "Compiled Mod" / "gfx" / "interface" / "goals",
     "ideas": ROOT / "UWTS-Build" / "Compiled Mod" / "gfx" / "interface" / "ideas",
+    "modifiers": ROOT / "UWTS-Build" / "Compiled Mod" / "gfx" / "interface" / "modifiers",
 }
 
 # Browser-friendly formats. DDS/TGA are intentionally excluded because browsers
@@ -53,7 +54,7 @@ def main():
                 "name": source_file.name,
                 "stem": source_file.stem,
                 "category": category,
-                "categoryLabel": "Focus Graphics" if category == "goals" else "Idea Graphics",
+                "categoryLabel": "Focuses" if category == "goals" "Ideas" else if category == "ideas" else "Modifiers",
                 "folder": relative.parent.as_posix() if str(relative.parent) != "." else "",
                 "path": web_path,
                 "extension": source_file.suffix.lower().lstrip("."),
