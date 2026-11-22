@@ -7,8 +7,8 @@ OUTPUT = ROOT / "_site"
 
 # These paths are relative to the repository root.
 SOURCES = {
-    "goals": ROOT / "UWTS-Build" / "Compiled Mod" / "gfx" / "interface" / "goals",
-    "ideas": ROOT / "UWTS-Build" / "Compiled Mod" / "gfx" / "interface" / "ideas",
+    "goals": ROOT / "Compiled Mod" / "gfx" / "interface" / "goals",
+    "ideas": ROOT / "Compiled Mod" / "gfx" / "interface" / "ideas",
 }
 
 # Browser-friendly formats. DDS/TGA are intentionally excluded because browsers
