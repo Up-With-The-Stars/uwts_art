@@ -1,77 +1,77 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#151923">
-  <title>GFX Search</title>
-  <link rel="stylesheet" href="./style.css">
-  <script src="./app.js" defer></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#151923">
+	<title>GFX Search</title>
+	<link rel="stylesheet" href="./style.css">
+	<script src="./app.js" defer></script>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="./" aria-label="GFX Search home">
-      <span class="brand-mark">G</span>
-      <span>UWTS GFX <b>SEARCH</b></span>
-    </a>
-  </header>
+	<header class="topbar">
+		<a class="brand" href="./" aria-label="GFX Search home">
+			<span class="brand-mark">G</span>
+			<span>UWTS GFX <b>SEARCH</b></span>
+		</a>
+	</header>
 
-  <main class="container">
-    <section class="intro">
-      <p class="eyebrow">UWTS · GRAPHICS LIBRARY</p>
-      <h1>Find your graphics.</h1>
-      <p class="subtitle">Search and browse the compiled mod's focus and idea graphics.</p>
-    </section>
+	<main class="container">
+		<section class="intro">
+			<p class="eyebrow">UWTS · GRAPHICS LIBRARY</p>
+			<h1>Find your graphics.</h1>
+			<p class="subtitle">Search and browse the compiled mod's focus and idea graphics.</p>
+		</section>
+	
+		<section class="toolbar" aria-label="Gallery controls">
+		<label class="search-wrap">
+			<span aria-hidden="true">⌕</span>
+			<input id="search" type="search" placeholder="Search filenames or folders…" autocomplete="off">
+			<kbd>/</kbd>
+		</label>
+		<select id="category" aria-label="Filter category">
+			<option value="all">All categories</option>
+			<option value="goals">Focus graphics</option>
+			<option value="ideas">Idea graphics</option>
+		</select>
+		<select id="sort" aria-label="Sort images">
+			<option value="name">Name: A–Z</option>
+			<option value="name-desc">Name: Z–A</option>
+			<option value="folder">Folder</option>
+		</select>
+		</section>
+	
+		<section class="results-line">
+		<span id="result-count">Loading graphics…</span>
+		<button id="clear" class="text-button" type="button">Clear filters</button>
+		</section>
+	
+		<section id="gallery" class="gallery" aria-live="polite"></section>
+		<div id="empty" class="empty" hidden>
+		<div class="empty-icon">⌕</div>
+		<h2>No graphics found</h2>
+		<p>Try another search term or category.</p>
+		</div>
+		<p id="error" class="error" hidden></p>
+	</main>
 
-    <section class="toolbar" aria-label="Gallery controls">
-      <label class="search-wrap">
-        <span aria-hidden="true">⌕</span>
-        <input id="search" type="search" placeholder="Search filenames or folders…" autocomplete="off">
-        <kbd>/</kbd>
-      </label>
-      <select id="category" aria-label="Filter category">
-        <option value="all">All categories</option>
-        <option value="goals">Focus graphics</option>
-        <option value="ideas">Idea graphics</option>
-      </select>
-      <select id="sort" aria-label="Sort images">
-        <option value="name">Name: A–Z</option>
-        <option value="name-desc">Name: Z–A</option>
-        <option value="folder">Folder</option>
-      </select>
-    </section>
-
-    <section class="results-line">
-      <span id="result-count">Loading graphics…</span>
-      <button id="clear" class="text-button" type="button">Clear filters</button>
-    </section>
-
-    <section id="gallery" class="gallery" aria-live="polite"></section>
-    <div id="empty" class="empty" hidden>
-      <div class="empty-icon">⌕</div>
-      <h2>No graphics found</h2>
-      <p>Try another search term or category.</p>
-    </div>
-    <p id="error" class="error" hidden></p>
-  </main>
-
-  <dialog id="preview" class="preview">
-    <div class="preview-head">
-      <div>
-        <p id="preview-category" class="eyebrow"></p>
-        <h2 id="preview-name"></h2>
-        <p id="preview-folder" class="preview-folder"></p>
-      </div>
-      <button id="close-preview" class="icon-button" aria-label="Close preview">×</button>
-    </div>
-    <div class="preview-image-wrap"><img id="preview-image" alt=""></div>
-    <div class="preview-actions">
-      <button id="copy-path" class="button secondary" type="button">Copy path</button>
-      <a id="download" class="button" download>Download image</a>
-      <a id="open-original" class="button secondary" target="_blank" rel="noopener">Open original</a>
-    </div>
-  </dialog>
-
-  <footer>Automatically generated from the UWTS compiled graphics folders.</footer>
+	<dialog id="preview" class="preview">
+		<div class="preview-head">
+		<div>
+			<p id="preview-category" class="eyebrow"></p>
+			<h2 id="preview-name"></h2>
+			<p id="preview-folder" class="preview-folder"></p>
+		</div>
+		<button id="close-preview" class="icon-button" aria-label="Close preview">×</button>
+		</div>
+		<div class="preview-image-wrap"><img id="preview-image" alt=""></div>
+		<div class="preview-actions">
+		<button id="copy-path" class="button secondary" type="button">Copy path</button>
+		<a id="download" class="button" download>Download image</a>
+		<a id="open-original" class="button secondary" target="_blank" rel="noopener">Open original</a>
+		</div>
+	</dialog>
+	
+	<footer>Automatically generated from the UWTS compiled graphics folders.</footer>
 </body>
 </html>
