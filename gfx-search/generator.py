@@ -54,7 +54,7 @@ def main():
                 "name": source_file.name,
                 "stem": source_file.stem,
                 "category": category,
-                "categoryLabel": "Focuses" if category == "goals" "Ideas" if category == "ideas" else "Modifiers",
+                "categoryLabel": {"goals": "Focuses", "ideas": "Ideas", "modifiers": "Modifiers"}[category],
                 "folder": relative.parent.as_posix() if str(relative.parent) != "." else "",
                 "path": web_path,
                 "extension": source_file.suffix.lower().lstrip("."),
